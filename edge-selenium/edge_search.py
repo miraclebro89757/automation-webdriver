@@ -55,7 +55,7 @@ if not hotwords:
     hotwords = ["python", "macbook", "人工智能"]
 
 # 选取30个热词（如不足30则全部使用）
-search_terms = hotwords[:30]
+search_terms = hotwords[:10]
 
 service = Service(edge_driver_path)
 driver = webdriver.Edge(service=service)
@@ -80,8 +80,8 @@ try:
             print("未找到搜索结果，跳过。")
             continue
 
-        # 随机选择1-3个标题进行点击
-        click_count = random.randint(1, min(3, len(titles)))
+        # 随机选择1-2个标题进行点击
+        click_count = random.randint(1, min(2, len(titles)))
         click_indices = random.sample(range(len(titles)), click_count)
         for i, idx_click in enumerate(click_indices):
             try:
