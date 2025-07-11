@@ -1,29 +1,31 @@
-const puppeteer = require('puppeteer');
+const path = require('path');
+const {
+  screenshot,
+  waitForSelector,
+  waitTimeout,
+  runTestEntry,
+  gotoTab,
+} = require('./common/utils');
 
-(async () => {
+runTestEntry(async (page, browser) => {
   console.log('🚀 开始测试 pumpkin-web 应用...');
-  
-  // 启动浏览器
-  const browser = await puppeteer.launch({ 
-    headless: false, // 显示浏览器界面
-    defaultViewport: { width: 1200, height: 800 }
-  });
-  
-  const page = await browser.newPage();
-  
+  const screenshotDir = path.join(__dirname, 'screenshots');
+  if (!require('fs').existsSync(screenshotDir)) require('fs').mkdirSync(screenshotDir);
+
   try {
     // 1. 访问应用首页
     console.log('📱 访问 pumpkin-web 首页...');
     await page.goto('http://localhost:5173', { waitUntil: 'networkidle0' });
-    await page.waitForSelector('.pumpkin-theme');
+    await waitForSelector(page, '.pumpkin-theme');
     console.log('✅ 首页加载成功');
+    await screenshot(page, screenshotDir, 'home.png');
     
     // 2. 测试首页的单选和多选功能
     console.log('🎯 测试首页表单功能...');
     
     // 等待表单元素加载
-    await page.waitForSelector('.ant-checkbox-group');
-    await page.waitForSelector('.ant-radio-group');
+    await waitForSelector(page, '.ant-checkbox-group');
+    await waitForSelector(page, '.ant-radio-group');
     
     // 测试多选功能 - 选择几个南瓜吃法
     console.log('🍽️ 测试多选功能 - 选择南瓜吃法...');
@@ -39,14 +41,15 @@ const puppeteer = require('puppeteer');
       if (checkbox) {
         await checkbox.click();
         console.log(`✅ 选择了: ${option}`);
-        await page.waitForTimeout(500); // 等待动画
+        await waitTimeout(page, 500); // 等待动画
       }
     }
     
     // 验证多选结果显示
-    await page.waitForSelector('text=你选择了：');
+    await waitForSelector(page, 'text=你选择了：');
     const selectedText = await page.$eval('text=你选择了：', el => el.textContent);
     console.log(`📝 多选结果: ${selectedText}`);
+    await screenshot(page, screenshotDir, 'multi-select.png');
     
     // 测试单选功能 - 选择地区
     console.log('🌍 测试单选功能 - 选择地区...');
@@ -57,12 +60,13 @@ const puppeteer = require('puppeteer');
       if (radio) {
         await radio.click();
         console.log(`✅ 选择了: ${option}`);
-        await page.waitForTimeout(500); // 等待动画
+        await waitTimeout(page, 500); // 等待动画
         
         // 验证单选结果显示
-        await page.waitForSelector('text=你选择了：');
+        await waitForSelector(page, 'text=你选择了：');
         const radioSelectedText = await page.$eval('text=你选择了：', el => el.textContent);
         console.log(`📝 单选结果: ${radioSelectedText}`);
+        await screenshot(page, screenshotDir, 'radio-select.png');
         break; // 只测试一个选项
       }
     }
@@ -72,42 +76,35 @@ const puppeteer = require('puppeteer');
     
     // 点击"南瓜的历史" tab
     console.log('📚 点击"南瓜的历史" tab...');
-    await page.click('text=南瓜的历史');
-    await page.waitForSelector('.article-page');
-    await page.waitForTimeout(1000);
+    await gotoTab(page, '南瓜的历史');
+    await waitForSelector(page, '.article-page');
     console.log('✅ 南瓜的历史页面加载成功');
-    
-    // 验证页面内容
     const historyTitle = await page.$eval('h2', el => el.textContent);
     console.log(`📖 页面标题: ${historyTitle}`);
-    
-    // 截图保存
-    await page.screenshot({ path: 'pumpkin-history.png' });
-    console.log('📸 已保存南瓜的历史页面截图');
+    await screenshot(page, screenshotDir, 'pumpkin-history.png');
     
     // 点击"南瓜的品种" tab
     console.log('🎃 点击"南瓜的品种" tab...');
-    await page.click('text=南瓜的品种');
-    await page.waitForSelector('.article-page');
-    await page.waitForTimeout(1000);
+    await gotoTab(page, '南瓜的品种');
+    await waitForSelector(page, '.article-page');
     console.log('✅ 南瓜的品种页面加载成功');
-    
-    // 验证页面内容
     const varietiesTitle = await page.$eval('h2', el => el.textContent);
     console.log(`🎃 页面标题: ${varietiesTitle}`);
-    
-    // 截图保存
-    await page.screenshot({ path: 'pumpkin-varieties.png' });
-    console.log('📸 已保存南瓜的品种页面截图');
+    await screenshot(page, screenshotDir, 'pumpkin-varieties.png');
+
+    // 新增：上下滚动操作
+    const VarietiesPage = require('./pages/VarietiesPage');
+    const varietiesPage = new VarietiesPage(page, screenshotDir);
+    await varietiesPage.scrollDown(600);
+    await screenshot(page, screenshotDir, 'varieties-scroll-down.png');
+    await varietiesPage.scrollUp(600);
+    await screenshot(page, screenshotDir, 'varieties-scroll-up.png');
     
     // 点击"南瓜游戏" tab
     console.log('🎮 点击"南瓜游戏" tab...');
-    await page.click('text=南瓜游戏');
-    await page.waitForSelector('.article-page');
-    await page.waitForTimeout(1000);
+    await gotoTab(page, '南瓜游戏');
+    await waitForSelector(page, '.article-page');
     console.log('✅ 南瓜游戏页面加载成功');
-    
-    // 验证游戏页面内容
     const gameTitle = await page.$eval('h2', el => el.textContent);
     console.log(`🎮 页面标题: ${gameTitle}`);
     
@@ -117,17 +114,14 @@ const puppeteer = require('puppeteer');
     if (resetButton) {
       await resetButton.click();
       console.log('✅ 游戏重置按钮点击成功');
-      await page.waitForTimeout(500);
+      await waitTimeout(page, 500);
     }
-    
-    // 截图保存
-    await page.screenshot({ path: 'pumpkin-game.png' });
-    console.log('📸 已保存南瓜游戏页面截图');
+    await screenshot(page, screenshotDir, 'pumpkin-game.png');
     
     // 4. 返回首页并再次测试表单
     console.log('🏠 返回首页...');
-    await page.click('text=🎃 南瓜的世界');
-    await page.waitForTimeout(1000);
+    await gotoTab(page, '🎃 南瓜的世界');
+    await waitTimeout(page, 1000);
     
     // 测试取消选择功能
     console.log('❌ 测试取消选择功能...');
@@ -139,18 +133,15 @@ const puppeteer = require('puppeteer');
       if (checkbox) {
         await checkbox.click();
         console.log(`❌ 取消选择: ${option}`);
-        await page.waitForTimeout(300);
+        await waitTimeout(page, 300);
       }
     }
     
     // 验证最终选择结果
-    await page.waitForTimeout(500);
+    await waitTimeout(page, 500);
     const finalSelectedText = await page.$eval('text=你选择了：', el => el.textContent);
     console.log(`📝 最终选择结果: ${finalSelectedText}`);
-    
-    // 5. 最终截图
-    await page.screenshot({ path: 'pumpkin-final.png' });
-    console.log('📸 已保存最终页面截图');
+    await screenshot(page, screenshotDir, 'pumpkin-final.png');
     
     console.log('🎉 所有测试完成！');
     console.log('📁 生成的截图文件:');
@@ -161,13 +152,11 @@ const puppeteer = require('puppeteer');
     
   } catch (error) {
     console.error('❌ 测试过程中出现错误:', error);
-    await page.screenshot({ path: 'pumpkin-error.png' });
+    await screenshot(page, screenshotDir, 'pumpkin-error.png');
     console.log('📸 错误截图已保存为 pumpkin-error.png');
   } finally {
     // 等待一段时间让用户查看结果
     console.log('⏳ 等待 5 秒后关闭浏览器...');
-    await page.waitForTimeout(5000);
-    await browser.close();
-    console.log('👋 浏览器已关闭');
+    await waitTimeout(page, 5000);
   }
-})(); 
+}); 

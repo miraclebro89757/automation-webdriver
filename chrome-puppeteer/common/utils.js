@@ -55,6 +55,20 @@ async function runTestEntry(testFn) {
   }
 }
 
+// 向下滚动一页
+async function scrollDownOnePage(page) {
+  const pageHeight = await page.evaluate(() => window.innerHeight);
+  await page.evaluate(y => window.scrollBy({ top: y, behavior: 'smooth' }), pageHeight);
+  await page.waitForTimeout(500);
+}
+
+// 向上滚动一页
+async function scrollUpOnePage(page) {
+  const pageHeight = await page.evaluate(() => window.innerHeight);
+  await page.evaluate(y => window.scrollBy({ top: -y, behavior: 'smooth' }), pageHeight);
+  await page.waitForTimeout(500);
+}
+
 module.exports = {
   screenshot,
   waitForSelector,
@@ -63,4 +77,6 @@ module.exports = {
   waitTimeout,
   gotoTab,
   runTestEntry,
+  scrollDownOnePage,
+  scrollUpOnePage,
 }; 

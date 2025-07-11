@@ -16,6 +16,18 @@ class VarietiesPage {
   async getTitle() {
     return await this.page.$eval('h2', el => el.textContent);
   }
+
+  // 页面向下滚动
+  async scrollDown(pixels = 500) {
+    await this.page.evaluate(y => window.scrollBy({ top: y, behavior: 'smooth' }), pixels);
+    await this.page.waitForTimeout(500); // 等待滚动动画
+  }
+
+  // 页面向上滚动
+  async scrollUp(pixels = 500) {
+    await this.page.evaluate(y => window.scrollBy({ top: -y, behavior: 'smooth' }), pixels);
+    await this.page.waitForTimeout(500);
+  }
 }
 
 module.exports = VarietiesPage; 
