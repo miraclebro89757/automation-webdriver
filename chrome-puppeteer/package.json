@@ -1,0 +1,24 @@
+{
+  "name": "pumpkin-web-test",
+  "version": "1.0.0",
+  "description": "Puppeteer 测试脚本 for pumpkin-web",
+  "main": "test-pumpkin-web.js",
+  "scripts": {
+    "test": "node test-pumpkin-web.js",
+    "quick": "node quick-test.js",
+    "check": "node check-app.js",
+    "start": "node test-pumpkin-web.js"
+  },
+  "keywords": [
+    "puppeteer",
+    "testing",
+    "automation",
+    "pumpkin-web"
+  ],
+  "author": "Lucas",
+  "license": "MIT",
+  "dependencies": {
+    "cnpm": "^9.4.0",
+    "puppeteer": "^21.0.0"
+  }
+}
