@@ -50,7 +50,7 @@ edge_driver_path = './webdriver/msedgedriver'
 # 获取百度和Bing热词
 baidu_hotwords = get_baidu_hotwords(20)
 bing_hotwords = get_bing_hotwords(20)
-hotwords = list(dict.fromkeys(baidu_hotwords + bing_hotwords))[10:]  # 去重
+hotwords = list(dict.fromkeys(baidu_hotwords + bing_hotwords))  # 去重
 if not hotwords:
     hotwords = ["python", "macbook", "人工智能"]
 

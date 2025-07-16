@@ -6,11 +6,7 @@
 
 **参考答案：**
 我用过多种自动化测试工具，包括：
-- **Selenium**：经典的Web自动化测试工具，支持多语言和多浏览器。
-- **Puppeteer**：基于Node.js的无头浏览器自动化工具，适合前端UI自动化和爬虫。
-- **Playwright**：支持多浏览器（Chromium、Firefox、WebKit），API现代，适合端到端测试。
-- **Cypress**：前端集成测试工具，易用性强，适合现代Web应用。
-- **Appium**：移动端自动化测试工具，支持iOS和Android。
+
 此外，还用过JMeter（性能测试）、Postman（接口自动化）等。
 
 ---
