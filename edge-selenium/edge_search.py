@@ -43,19 +43,33 @@ def get_bing_hotwords(limit=20):
     except Exception as e:
         pass
     return hotwords
-
 # 指定 EdgeDriver 为当前路径webdriver下的msedgedriver
 edge_driver_path = './webdriver/msedgedriver'
+def get_appstore_hotapps(limit=20, country='cn', genre='36'):
+    url = f'https://rss.applemarketingtools.com/api/v2/{country}/apps/top-free/{limit}/apps.json'
+    try:
+        resp = requests.get(url, timeout=10)
+        if resp.status_code == 200:
+            data = resp.json()
+            return [entry['name'] for entry in data['feed']['results']]
+    except Exception as e:
+        print(f"获取App Store热门应用失败: {e}")
+    return []
 
-# 获取百度和Bing热词
-baidu_hotwords = get_baidu_hotwords(20)
-bing_hotwords = get_bing_hotwords(20)
-hotwords = list(dict.fromkeys(baidu_hotwords + bing_hotwords))[10:]  # 去重
+# 获取各平台热词
+appstore_hotwords = get_appstore_hotapps(30)
+baidu_hotwords = get_baidu_hotwords(30)
+bing_hotwords = get_bing_hotwords(30)
+
+# 合并去重，保留顺序
+hotwords = list(dict.fromkeys(appstore_hotwords + baidu_hotwords + bing_hotwords))
+
+# 取前30个
+hotwords = hotwords[:30]
+
+# 兜底
 if not hotwords:
-    hotwords = ["python", "macbook", "人工智能"]
-
-# 选取30个热词（如不足30则全部使用）
-search_terms = hotwords[:30]
+    hotwords = ["微信", "抖音", "支付宝"]
 
 service = Service(edge_driver_path)
 driver = webdriver.Edge(service=service)
@@ -66,7 +80,7 @@ try:
     driver.fullscreen_window()
     input("请在浏览器中手动登录你的微软账号，然后回到终端按回车继续...")
 
-    for idx, term in enumerate(search_terms):
+    for idx, term in enumerate(hotwords):
         print(f"第{idx+1}次搜索: {term}")
         search_box = driver.find_element(By.NAME, "q")
         search_box.clear()
