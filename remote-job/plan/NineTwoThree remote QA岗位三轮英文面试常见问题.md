@@ -7,63 +7,34 @@
 **1. Tell me about yourself.**  
 请自我介绍。
 - 答题思路：简要介绍教育背景、QA/IT经验、技能亮点、对岗位的兴趣。
-Good morning! It's a real pleasure to be here. My name is Lucas.
-I'm a Software Test Engineer with 7 years of experience, specializing in performance and automation testing.
-For instance, in my last role, I successfully reduced our regression test cycle time by 30% by implementing a new automated test suite, which significantly accelerated our release cadence.
-例如，在我上一份工作中，我通过实施一套新的自动化测试套件，成功将回归测试周期缩短了30%，这大大加快了我们的发布节奏。
-I'm passionate about driving quality and efficiency in software development.
-我热衷于推动软件开发中的质量和效率提升。
-My career has seen me progress from a functional test engineer to a Senior Testing Expert, where I was often responsible for designing comprehensive test strategies and driving automation initiatives for the team.
-我的职业生涯从功能测试工程师逐步成长为高级测试专家，期间我经常负责为团队设计全面的测试策略并推动自动化项目。
-For example, I designed and implemented a data-driven automation framework using Python and Pytest for our core API services, which not only increased test coverage by 40% but also reduced manual effort by 60% for daily sanity checks.
-比如，我曾为我们的核心API服务使用Python和Pytest设计并实现了一个数据驱动的自动化框架，这不仅将测试覆盖率提升了40%，还将日常冒烟测试的人工工作量减少了60%。
-Later, I took on roles where I mentored junior testers and spearheaded the adoption of new testing tools and frameworks, demonstrating my technical leadership in optimizing testing processes.
-后来，我还担任了指导初级测试人员的角色，并带头引入新的测试工具和框架，展现了我在优化测试流程方面的技术领导力。
-
-For instance, I introduced Docker and Kubernetes for setting up scalable and isolated test environments, which cut down environment setup time by 70% and ensured consistency across different testing phases.
-例如，我引入了Docker和Kubernetes来搭建可扩展且隔离的测试环境，这将环境搭建时间缩短了70%，并确保了不同测试阶段的一致性。
-My experience also includes periods where I oversaw testing projects and optimized test processes across teams, leveraging my deep technical understanding to ensure quality at scale.
-我的经验还包括管理测试项目和跨团队优化测试流程，利用我深厚的技术理解力来保障大规模的质量。
-A notable example was when I led an initiative to integrate API automation testing into our CI/CD pipeline, which automatically ran load tests on every major build.
-一个值得一提的例子是，我曾主导将API自动化测试集成到我们的CI/CD流水线中，在每个主要构建上自动运行压力测试。
-This proactive approach helped us reduce the production incident rate by over 50%.
-这种主动的方法帮助我们将生产环境事故的发生率降低了50%以上。
-My main programming language is Python, which I extensively use for developing robust automation frameworks and data analysis tools.
-我的主要编程语言是Python，我广泛用它来开发健壮的自动化测试框架和数据分析工具。
-I'm also familiar with Java and Golang, which aids my ability to understand and debug code in diverse project environments.
-我也熟悉Java和Golang，这有助于我在不同项目环境中理解和调试代码。
-In essence, my rich knowledge and practical experience in performance and automation testing enable me to tackle complex quality challenges effectively.
-总的来说，我在性能测试和自动化测试方面丰富的知识和实践经验，使我能够高效应对复杂的质量挑战。
-I'm really passionate about AI programming.
-我真的很热爱AI编程。
-
-I'm pretty good at coming up with the right prompts and using my background in software architecture to build cool tools with AI.
-我很擅长想出合适的提示词，并且利用我的架构知识和AI一起开发一些很酷的小工具。
-Thanks to these skills, I've already made a bunch of handy tools that make my work a lot easier and more efficient.
-多亏了这些技能，我已经做出了不少实用的小工具，让我的工作变得更轻松、更高效。
-I love working with AI and building useful tools. I know how to write good prompts and use my tech background to get things done faster.
-我喜欢用AI做东西，开发实用的小工具。我知道怎么写好提示词，也能用我的技术背景让事情做得更快。 
-To sum up, I have a strong background in software testing, lots of hands-on experience, and I’m always eager to learn new things and keep up with the latest tech.
-总的来说，我有扎实的软件测试背景，丰富的实战经验，而且我一直很乐于学习新知识、紧跟最新技术。
-I’m confident that my leadership skills and technical know-how can really help [Company Name] achieve its quality goals and make your products even better.
-我相信，我的领导能力和技术专长真的能帮助[公司名称]实现质量目标，让你们的产品变得更出色。
-Thanks a lot for your time and for considering me.
-I’m really good at different kinds of testing, like black-box, white-box, automation, and performance testing.
-我很擅长各种测试方法，比如黑盒测试、白盒测试、自动化测试和性能测试。
-What’s more, I’ve got a solid track record of coming up with effective test strategies and putting together thorough test plans.
-而且，我在制定高效的测试策略和完善的测试计划方面有很好的成绩。
-For example, in a recent project, I started performance testing early on, which helped us spot some major bottlenecks before going live and saved us a lot of time and effort later.
-这让我们在上线前就发现了主要的瓶颈，后面也省去了很多返工和麻烦。
+Good morning! My name is Lucas. I graduated from China Jiliang University with a degree in Measurement and Control Technology, and I have 7 years of experience as a Software Test Engineer.
+In my previous roles, I have led testing projects and helped improve the efficiency and quality of software releases. For example, I introduced automated testing solutions that significantly reduced testing time and improved product quality.
+I am a responsible and proactive team player, always eager to learn new things and adapt to new challenges. I enjoy working with others to achieve common goals and believe that good communication is key to success.
+I am very interested in this position and excited about the opportunity to contribute to your team. Thank you for your time and consideration.
 
 **2. Why do you want to join NineTwoThree (or this company)?**  
 你为什么想加入NineTwoThree/我们公司？
 - 答题思路：结合公司AI创新、远程文化、成长机会、团队氛围等。
 
+I learned that 923 is a Boston-based software design company focused on AI, providing customized AI solutions and digital product development for businesses. My previous job was also at a company driven by AI technology, and I am truly passionate about the power of AI—it really excites me.
+
+What I like most about your company is your international team and the support for remote work. I love traveling and working from different places around the world, and being able to work efficiently while enjoying time with my family is very important to me.
+
+I believe my technical skills and experience are a great match for this position, and I am very eager to join your team.
+
+---
+
 **3. What are your strengths and weaknesses?**  
 你的优点和缺点是什么？
 - 答题思路：优点突出细致、责任心、沟通能力，缺点可说“过于追求细节、正在提升自动化技能”等。
+Strengths:
+One of my main strengths is my strong self-motivation and willingness to learn new things. For example, when I started as a manual tester, I found the work repetitive, so I taught myself API automation. This allowed me to automate about 80% of our test cases, which greatly improved our testing efficiency and helped me grow from a manual tester to an automation tester. I am also detail-oriented and responsible, and I communicate well with my team.
+Weaknesses:
+Sometimes, I can get too focused on technical details, which may distract me from the bigger picture. To address this, I now make a note of interesting technical topics and only explore them after I finish my main tasks. This helps me stay focused and manage my time better.
 
----
+end:
+Think you for make some time to see me .
+
 
 ## 2. 技术面试常见英文问题
 
@@ -78,7 +49,29 @@ For example, in a recent project, I started performance testing early on, which 
 **3. What is the difference between functional, regression, and exploratory testing?**  
 功能测试、回归测试和探索性测试的区别？
 - 答题思路：简明定义+实际应用场景。
-
+Interface Automation Testing Framework
+	
+1.Can you explain the architecture of an interface automation test framework?
+您能解释一下接口自动化测试框架的架构吗？
+	这是一个以 Excel 为入口、YAML 为中间校验、pytest 为执行核心，支持丰富断言、依赖和扩展能力的自动化测试框架，适合团队协作和复杂业务场景。
+    主要流程：测试人员通过excel维护测试用例，框架将excel用例转为yaml格式做结构校验，再转为python测试代码。运行之后生成html测试报告，并且提供详细的日志便于分析问题。
+2.How do you handle dynamic URLs or endpoints in your interface tests?
+您如何在接口测试中处理动态URL或端点？
+	
+3.What strategies do you use to ensure the reliability and stability of your API test scripts?
+您采用哪些策略来确保API测试脚本的可靠性和稳定性？
+	
+4.How do you perform error handling and exception management in your API test cases?
+您如何在API测试案例中处理错误处理和异常管理？
+	
+5.Explain how you implement authentication and authorization in your API tests (e.g., OAuth, Basic Auth).
+解释您如何在API测试中实现认证和授权（例如，OAuth，基本认证）。
+	
+6.How do you design your API test suites to cover different aspects such as functional, security, performance, and load testing?
+您如何设计API测试套件以涵盖不同方面，如功能、安全性、性能和负载测试？
+	
+7.Discuss your approach to integration testing using interfaces.
+介绍您使用接口进行集成测试的方法。
 ---
 
 ## 3. 直属Manager面试常见英文问题
@@ -97,4 +90,3 @@ For example, in a recent project, I started performance testing early on, which 
 
 ---
 
-如需每个问题的详细英文答案模板、个性化润色或模拟面试脚本，随时联系我！ 
