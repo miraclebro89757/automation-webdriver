@@ -1,0 +1,31 @@
+python automation testing interview questions：
+
+Q1: What is Selenium and what are its main components?
+A1: Selenium is an open-source framework for automating web browsers. Its main components are Selenium WebDriver, Selenium IDE, and Selenium Grid. WebDriver is used for browser automation, IDE is a record-and-playback tool, and Grid allows parallel test execution across different machines and browsers.
+
+Q2: How do you locate elements in Selenium WebDriver?
+A2: Elements can be located using methods like find_element_by_id, find_element_by_name, find_element_by_xpath, find_element_by_css_selector, find_element_by_class_name, and find_element_by_tag_name.
+
+Q3: What is Pytest and why is it popular for Python automation testing?
+A3: Pytest is a testing framework for Python that makes it easy to write simple and scalable test cases. It is popular because of its simple syntax, powerful fixtures, support for parameterization, and rich plugin ecosystem.
+
+Q4: How do you mark a test to be skipped or expected to fail in Pytest?
+A4: You can use the @pytest.mark.skip or @pytest.mark.xfail decorators to skip a test or mark it as expected to fail, respectively.
+
+Q5: How can you run a specific test or a subset of tests using Pytest?
+A5: You can run a specific test file with 'pytest test_file.py', a specific test class with 'pytest test_file.py::TestClass', or a specific test function with 'pytest test_file.py::TestClass::test_method'.
+
+Q6: How do you handle waits in Selenium WebDriver?
+A6: Selenium provides implicit waits (driver.implicitly_wait(seconds)) and explicit waits (WebDriverWait) to handle dynamic content and synchronization issues.
+
+Q7: What is a fixture in Pytest?
+A7: A fixture is a function decorated with @pytest.fixture that provides setup and teardown code for tests. Fixtures can be used to initialize resources, prepare test data, or clean up after tests.
+
+Q8: How do you assert in Pytest?
+A8: You use the standard Python 'assert' statement. Pytest introspects the assert statement and provides detailed error messages on failure.
+
+Q9: How can you integrate Selenium with Pytest?
+A9: You can write Selenium-based test functions or classes and use Pytest to manage test execution, fixtures for browser setup/teardown, and reporting.
+
+Q10: What are some best practices for Python automation testing?
+A10: Best practices include using the Page Object Model for maintainable Selenium tests, leveraging fixtures in Pytest, keeping tests independent, using descriptive test names, and maintaining clear test data management.

@@ -29,3 +29,59 @@ git push --set-upstream origin ljc
 - 你现在只需要 `git pull origin master`（或你想要的分支名）即可把远程分支的代码合并到当前分支。
 - 如果是新分支，第一次 push 用 `git push --set-upstream origin ljc`。
 
+# 你可以按照以下步骤将 `ljc` 分支的代码合并到 `master` 分支：
+
+---
+
+### 1. 切换到 master 分支
+
+```bash
+git checkout master
+```
+
+---
+
+### 2. 拉取远程最新 master（推荐，避免冲突）
+
+```bash
+git pull origin master
+```
+
+---
+
+### 3. 合并 ljc 分支到 master
+
+```bash
+git merge ljc
+```
+
+如果有冲突，按提示解决冲突后，使用 `git add <冲突文件>` 标记已解决，然后继续：
+
+```bash
+git commit
+```
+（如果合并时没有冲突，这一步会自动完成）
+
+---
+
+### 4. 推送合并后的 master 到远程仓库
+
+```bash
+git push origin master
+```
+
+---
+
+#### 总结命令
+
+```bash
+git checkout master
+git pull origin master
+git merge ljc
+# 解决冲突并 commit（如有）
+git push origin master
+```
+
+---
+
+如遇到冲突或有任何报错，欢迎把报错信息发给我，我帮你分析！
