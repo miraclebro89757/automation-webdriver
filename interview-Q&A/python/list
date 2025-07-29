@@ -1,5 +1,3 @@
-python automation testing interview questions：
-
 Q1: What is Selenium and what are its main components?
 A1: Selenium is an open-source framework for automating web browsers. Its main components are Selenium WebDriver, Selenium IDE, and Selenium Grid. WebDriver is used for browser automation, IDE is a record-and-playback tool, and Grid allows parallel test execution across different machines and browsers.
 
