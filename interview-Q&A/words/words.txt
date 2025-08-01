@@ -1,0 +1,142 @@
+strategy
+tactics
+objectives
+goals
+vision
+mission
+policies
+procedures
+guidelines
+hierarchy
+department
+division
+subsidiary
+branch
+headquarters
+board of directors
+executive
+middle management
+balance sheet
+income statement
+cash flow
+revenue
+expenses
+profit
+loss
+assets
+liabilities
+investment
+funding
+capital
+equity
+debt
+loan
+interest rate
+dividend
+portfolio
+market research
+target audience
+market share
+competition
+competitive advantage
+brand awareness
+customer satisfaction
+advertising
+promotion
+public relations
+digital marketing
+social media
+content marketing
+email marketing
+recruitment
+hiring
+interview
+candidate
+resume
+CV
+training
+development
+onboarding
+performance
+evaluation
+appraisal
+compensation
+benefits
+retention
+turnover
+workplace
+production
+manufacturing
+supply chain
+inventory
+logistics
+procurement
+vendor
+quality control
+project management
+timeline
+deadline
+milestone
+deliverable
+stakeholder
+scope
+budget
+digital transformation
+automation
+artificial intelligence
+machine learning
+data analytics
+cloud computing
+cybersecurity
+innovation
+research and development
+intellectual property
+patent
+trademark
+copyright
+startup
+contract
+agreement
+terms and conditions
+liability
+compliance
+regulation
+legislation
+litigation
+risk management
+insurance
+audit
+due diligence
+fraud
+corruption
+whistleblower
+globalization
+international trade
+export
+import
+tariff
+trade agreement
+foreign exchange
+currency
+cultural diversity
+cross-cultural
+localization
+adaptation
+communication
+negotiation
+partnership
+presentation
+meeting
+conference call
+collaboration
+teamwork
+leadership
+mentoring
+networking
+spreadsheet
+database
+software
+platform
+dashboard
+workflow
+integration

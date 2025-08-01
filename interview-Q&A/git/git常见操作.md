@@ -55,7 +55,7 @@ git pull origin master
 git merge ljc
 ```
 
-如果有冲突，按提示解决冲突后，使用 `git add <冲突文件>` 标记已解决，然后继续：
+如果有冲突，找到文件中的红色文件，选择左侧或右侧代码，或是在下方手动编辑代码后点击merge后手动解决冲突，然后使用 `git add <冲突文件>` 标记已解决，然后继续：
 
 ```bash
 git commit
